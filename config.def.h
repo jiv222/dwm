@@ -73,7 +73,8 @@ static const char *telegram[] = { "telegram-desktop", NULL };
 static const char *firefox[] = { "firefox", NULL };
 static const char *discord[] = { "discord", NULL };
 static const char *zathura[] = { "zathura", NULL };
-static const char *suspend[] = { "loginctl", "suspend", NULL };
+static const char *vifm[] = { "st", "-e" ,"vifm", NULL };
+static const char *suspend[] = { "doas","loginctl", "suspend", NULL };
 static const char *vpn[] = { "doas", "/home/four/.local/bin/dmenu_wg.sh", NULL };
 
 #include "focusurgent.c"
@@ -133,6 +134,7 @@ static Key keys[] = {
 	{ MODKEY|ALT,		XK_f,	spawn,	{.v = firefox } },
 	{ MODKEY|ALT,		XK_d,	spawn,	{.v = discord } },
 	{ MODKEY|ALT,		XK_z,	spawn,	{.v = zathura } },
+	{ MODKEY|ALT,		XK_b,	spawn,	{.v = vifm } },
 	/* tags */
 	TAGKEYS( XK_1, 0)
 	TAGKEYS( XK_2, 1)
