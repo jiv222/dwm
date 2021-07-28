@@ -22,6 +22,7 @@ static const char *colors[][3]      = {
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+/* static const char *tags[] = { "", "", "", "", "", "", "", "", "" }; */
 
 static const Rule rules[] = {
 	/* class				instance    title			tags mask	isfloating	monitor */
@@ -40,9 +41,9 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "",      tile },    /* first entry is default */
+	{ "",      NULL },    /* no layout function means floating behavior */
+	{ "",      monocle },
 };
 
 /* key definitions */
@@ -76,6 +77,7 @@ static const char *zathura[] = { "zathura", NULL };
 static const char *vifm[] = { "st", "-e" ,"vifm", NULL };
 static const char *suspend[] = { "doas","loginctl", "suspend", NULL };
 static const char *vpn[] = { "doas", "/home/four/.local/bin/dmenu_wg.sh", NULL };
+static const char *spotify[] = { "spotify", NULL };
 
 #include "focusurgent.c"
 static Key keys[] = {
@@ -129,12 +131,13 @@ static Key keys[] = {
 	/* dmenu */
 	{ MODKEY|CTRL,		XK_p,	spawn,	{.v = passmenu } },
 	{ MODKEY|CTRL,		XK_v,	spawn,	{.v = vpn } },
-	/* programs */
+	/* apps */
 	{ MODKEY|ALT,		XK_t,	spawn,	{.v = telegram } },
 	{ MODKEY|ALT,		XK_f,	spawn,	{.v = firefox } },
 	{ MODKEY|ALT,		XK_d,	spawn,	{.v = discord } },
 	{ MODKEY|ALT,		XK_z,	spawn,	{.v = zathura } },
 	{ MODKEY|ALT,		XK_b,	spawn,	{.v = vifm } },
+	{ MODKEY|ALT,		XK_s,	spawn,	{.v = spotify } },
 	/* tags */
 	TAGKEYS( XK_1, 0)
 	TAGKEYS( XK_2, 1)
